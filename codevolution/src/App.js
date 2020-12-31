@@ -8,7 +8,7 @@ import Counter from './components/Counter'
 import FunctionClick from './components/FunctionClick';
 import ClassClick from './components/ClassClick';
 import EventBind from './components/EventBind';
-import ParentComponent from './components/ParentComponent';
+// import ParentComponent from './components/ParentComponent';
 import UserGreeting from './components/UserGreeting';
 import NameList from './components/NameList';
 import StyleSheets from './components/StyleSheets'
@@ -17,6 +17,10 @@ import './components/appStyles.css'
 import styles from './components/appStyles.module.css'
 import Form from './components/Form';
 import LifeCycleA from './components/LifeCycleA';
+import FragmentDemo from './components/FragmentDemo';
+import Table from './AdvancedComponents/Table';
+import { PureComponent } from 'react';
+import ParentComponent from './AdvancedComponents/ParentComponent';
 //Check Greet.js for clarification regarding stateless component(WITH PROPS)
 //Check Welcome.js for clarification regarding statefull component(WITH PROPS)
 //Check Message.js for clarification regarding STATE(WITH STATE)
@@ -29,6 +33,8 @@ import LifeCycleA from './components/LifeCycleA';
 //Check StyleList.js,Inline.js and myStyle.css for styling components and part 10.
 //Check Form.js for forms
 //Check LifeCycleA.js,LifeCycleB.js and part 10 for lifecyle methods.
+//Check FragmentDemo.js and part 13 for fragments.Check Advanced components for the rest regarding fragments.
+//Check Part 14 and PureComponent.js,RegulaCoponent.js in Advanced Components for Pure Components.
 function App() {
   return (
     <div className="App">
@@ -84,7 +90,14 @@ function App() {
       {/* <Form /> */}
 
       {/*12 part*/}
-      <LifeCycleA />
+      {/* <LifeCycleA /> */}
+
+      {/* Part 13 */}
+      {/* <FragmentDemo /> */}
+      {/* <Table /> */}
+      {/* Part 14 */}
+      {/* <PureComponent /> */}
+      <ParentComponent />
     </div>
   );
 }
