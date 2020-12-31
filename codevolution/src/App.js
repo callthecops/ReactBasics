@@ -22,6 +22,11 @@ import Table from './AdvancedComponents/Table';
 import { PureComponent } from 'react';
 import ParentComponent from './AdvancedComponents/ParentComponent';
 import RefsDemo from './AdvancedComponents/RefsDemo';
+import PortalDemo from './AdvancedComponents/PortalDemo';
+import Hero from './AdvancedComponents/Hero';
+import ErrorBoundary from './AdvancedComponents/ErrorBoundary';
+import ClickCounter from './AdvancedComponents/ClickCounter';
+import HoverCounter from './AdvancedComponents/HoverCounter';
 //Check Greet.js for clarification regarding stateless component(WITH PROPS)
 //Check Welcome.js for clarification regarding statefull component(WITH PROPS)
 //Check Message.js for clarification regarding STATE(WITH STATE)
@@ -37,6 +42,9 @@ import RefsDemo from './AdvancedComponents/RefsDemo';
 //Check FragmentDemo.js and part 13 for fragments.Check Advanced components for the rest regarding fragments.
 //Check Part 14 and PureComponent.js,RegulaCoponent.js in Advanced Components for Pure Components.
 //Check part 15 and RefsDemo.js for refs.
+//Check part 16 and PortalDemo.js in advanced Components for Portals
+//Check part 17 and Hero.js,ErrorBoundary for error handling
+//Check part 18 and ClickCounter.js for higher order components.
 function App() {
   return (
     <div className="App">
@@ -101,7 +109,22 @@ function App() {
       {/* <PureComponent /> */}
       {/* <ParentComponent /> */}
       {/* Part 15 */}
-      <RefsDemo />
+      {/* <RefsDemo /> */}
+      {/* Part 16 */}
+      {/* <PortalDemo /> */}
+      {/* Part 17 */}
+      {/* <ErrorBoundary>
+        <Hero heroName="Batman" />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Hero heroName="Superman" />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Hero heroName="Joker" />
+      </ErrorBoundary> */}
+      {/* Part 18 */}
+      <ClickCounter />
+      <HoverCounter />
     </div>
   );
 }
