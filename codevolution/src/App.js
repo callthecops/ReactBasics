@@ -28,7 +28,7 @@ import LifeCycleA from './components/LifeCycleA';
 //Check NameList for Array operations
 //Check StyleList.js,Inline.js and myStyle.css for styling components and part 10.
 //Check Form.js for forms
-//Check LifeCycleA.js and part 10 for lifecyle methods.
+//Check LifeCycleA.js,LifeCycleB.js and part 10 for lifecyle methods.
 function App() {
   return (
     <div className="App">
