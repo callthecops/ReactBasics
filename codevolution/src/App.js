@@ -21,6 +21,7 @@ import FragmentDemo from './components/FragmentDemo';
 import Table from './AdvancedComponents/Table';
 import { PureComponent } from 'react';
 import ParentComponent from './AdvancedComponents/ParentComponent';
+import RefsDemo from './AdvancedComponents/RefsDemo';
 //Check Greet.js for clarification regarding stateless component(WITH PROPS)
 //Check Welcome.js for clarification regarding statefull component(WITH PROPS)
 //Check Message.js for clarification regarding STATE(WITH STATE)
@@ -35,6 +36,7 @@ import ParentComponent from './AdvancedComponents/ParentComponent';
 //Check LifeCycleA.js,LifeCycleB.js and part 10 for lifecyle methods.
 //Check FragmentDemo.js and part 13 for fragments.Check Advanced components for the rest regarding fragments.
 //Check Part 14 and PureComponent.js,RegulaCoponent.js in Advanced Components for Pure Components.
+//Check part 15 and RefsDemo.js for refs.
 function App() {
   return (
     <div className="App">
@@ -97,7 +99,9 @@ function App() {
       {/* <Table /> */}
       {/* Part 14 */}
       {/* <PureComponent /> */}
-      <ParentComponent />
+      {/* <ParentComponent /> */}
+      {/* Part 15 */}
+      <RefsDemo />
     </div>
   );
 }
