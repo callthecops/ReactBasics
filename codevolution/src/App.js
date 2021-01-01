@@ -27,6 +27,12 @@ import Hero from './AdvancedComponents/Hero';
 import ErrorBoundary from './AdvancedComponents/ErrorBoundary';
 import ClickCounter from './AdvancedComponents/ClickCounter';
 import HoverCounter from './AdvancedComponents/HoverCounter';
+import ClickCounterTwo from './AdvancedComponents/ClickCounterTwo';
+import HoverCounterTwo from './AdvancedComponents/HoverCounterTwo';
+import Users from './AdvancedComponents/Users';
+import CounterProps from './AdvancedComponents/CounterProps';
+import ComponentC from './contextComponents/ComponentC';
+import { UserProvider } from './contextComponents/userContext';
 //Check Greet.js for clarification regarding stateless component(WITH PROPS)
 //Check Welcome.js for clarification regarding statefull component(WITH PROPS)
 //Check Message.js for clarification regarding STATE(WITH STATE)
@@ -44,7 +50,9 @@ import HoverCounter from './AdvancedComponents/HoverCounter';
 //Check part 15 and RefsDemo.js for refs.
 //Check part 16 and PortalDemo.js in advanced Components for Portals
 //Check part 17 and Hero.js,ErrorBoundary for error handling
-//Check part 18 and ClickCounter.js for higher order components.
+//Check part 18 and ClickCounter.js,withCounter.js,HoverCounter.js for higher order components.
+//Check part 19 and ClickCounterTwo.js,HoverCOunterTwo.js,CounterProps.js for rendering props.
+//Check part 20 and ComponentC.js, ComponentF.js, ComponentE.js for React Context
 function App() {
   return (
     <div className="App">
@@ -123,10 +131,36 @@ function App() {
         <Hero heroName="Joker" />
       </ErrorBoundary> */}
       {/* Part 18 */}
-      <ClickCounter />
-      <HoverCounter />
+      {/* <ClickCounter name="Tudi" />
+      <HoverCounter /> */}
+      {/* Part 19 */}
+      {/* <ClickCounterTwo />
+      <HoverCounterTwo /> */}
+      {/* Version one */}
+      {/* <Users name={(isLoggedIn) => isLoggedIn ? "Welcome Tudor" : "Please Login"} /> */}
+      {/* Version two */}
+      {/* <Users render={(isLoggedIn) => isLoggedIn ? "Welcome Tudor" : "Please Login"} /> */}
+
+      {/* <CounterProps render={(count, incrementCount) => (<ClickCounterTwo count={count} incrementCount={incrementCount} />)} />
+      <CounterProps render={(count, incrementCount) => (<HoverCounterTwo count={count} incrementCount={incrementCount} />)} /> */}
+
+      {/* Variation of render props that doesn't use the children prop instead of the render prop. */}
+
+      {/* <CounterProps>
+        {(count, incrementCount) => (<ClickCounterTwo count={count} incrementCount={incrementCount} />)}
+      </CounterProps>
+      <CounterProps>
+        {(count, incrementCount) => (<HoverCounterTwo count={count} incrementCount={incrementCount} />)}
+      </CounterProps> */}
+
+      {/* Part 20 */}
+      <UserProvider value="Tudor">
+        <ComponentC />
+      </UserProvider>
+
     </div>
   );
+
 }
 
 export default App;
