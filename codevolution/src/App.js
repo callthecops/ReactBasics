@@ -35,6 +35,9 @@ import ComponentC from './contextComponents/ComponentC';
 import { UserProvider } from './contextComponents/userContext';
 import PostList from './http/PostList';
 import PostForm from './http/PostForm';
+import { Route, BrowserRouter as Router, Link, Switch } from 'react-router-dom';
+import Home from './routerTest/Home';
+import About from './routerTest/About';
 //Check Greet.js for clarification regarding stateless component(WITH PROPS)
 //Check Welcome.js for clarification regarding statefull component(WITH PROPS)
 //Check Message.js for clarification regarding STATE(WITH STATE)
@@ -59,9 +62,27 @@ import PostForm from './http/PostForm';
 //Check part 22 and PostForm.js for HttpPost.
 function App() {
   return (
-    <div className="App">
+    //To use Router we have to first install it using npm install react-router-dom, then import above and then sorround the whole paragraph we want with the <Router> tags.Inside the router we can now create new Routes.These components have 2 parameters first is the url path and the second is the component it needs to render.Once we run the server we can access the component by entering that specific route.
+    //Next we have Switch. We can use this component to group all our routes inside.Each time a request is made to a specific route, that specifi one is choosen by react.Next we can also create Link.In order to make them work we first have to define the routes to specific paths.Once they are defined, Links can be added everywhere and that specifi route will proc.
+    //Links do client side routing which mean we are not reloading the whole application but only changing the page by refreshing it.Links "to" has to match with Route "path".
+    <Router>
+      <div className="App">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/home">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">ABOUT</Link>
+            </li>
+          </ul>
+        </nav>
 
-      {/*first part}
+        <Switch>
+          <Route path="/home" component={Home} />
+          <Route path="/about" component={About} />
+        </Switch>
+        {/*first part}
       {/* <Welcome name="Marin" heroName="Batman" />
       <Welcome name="Babuin" heroName="Superman" />
       <Welcome name="Cartonar" heroName="Aquaman" />
@@ -76,56 +97,56 @@ function App() {
       <Greet name="Cartonar" heroName="Aquaman" />
       <Hello /> */}
 
-      {/*Second part*/}
-      {/* <Message /> */}
+        {/*Second part*/}
+        {/* <Message /> */}
 
-      {/*third part*/}
-      {/* <Counter /> */}
+        {/*third part*/}
+        {/* <Counter /> */}
 
-      {/*fourth part*/}
-      {/* <FunctionClick />
+        {/*fourth part*/}
+        {/* <FunctionClick />
       <ClassClick /> */}
 
-      {/*fifth part*/}
-      {/* <EventBind /> */}
+        {/*fifth part*/}
+        {/* <EventBind /> */}
 
-      {/*seventh part*/}
-      {/* <ParentComponent /> */}
+        {/*seventh part*/}
+        {/* <ParentComponent /> */}
 
-      {/*eight part*/}
-      {/* <UserGreeting /> */}
+        {/*eight part*/}
+        {/* <UserGreeting /> */}
 
-      {/*ninth part*/}
-      {/* <NameList /> */}
+        {/*ninth part*/}
+        {/* <NameList /> */}
 
-      {/*10 part*/}
-      {/* <StyleSheets /> */}
+        {/*10 part*/}
+        {/* <StyleSheets /> */}
 
-      {/*we can also add conditional color change by adding a boolean attribute*/}
-      {/* <StyleSheets primary={false} />
+        {/*we can also add conditional color change by adding a boolean attribute*/}
+        {/* <StyleSheets primary={false} />
       <Inline />
 
       <h1 className="error">Error</h1>
       <h1 className={styles.success}>Success</h1> */}
 
-      {/*11 part*/}
-      {/* <Form /> */}
+        {/*11 part*/}
+        {/* <Form /> */}
 
-      {/*12 part*/}
-      {/* <LifeCycleA /> */}
+        {/*12 part*/}
+        {/* <LifeCycleA /> */}
 
-      {/* Part 13 */}
-      {/* <FragmentDemo /> */}
-      {/* <Table /> */}
-      {/* Part 14 */}
-      {/* <PureComponent /> */}
-      {/* <ParentComponent /> */}
-      {/* Part 15 */}
-      {/* <RefsDemo /> */}
-      {/* Part 16 */}
-      {/* <PortalDemo /> */}
-      {/* Part 17 */}
-      {/* <ErrorBoundary>
+        {/* Part 13 */}
+        {/* <FragmentDemo /> */}
+        {/* <Table /> */}
+        {/* Part 14 */}
+        {/* <PureComponent /> */}
+        {/* <ParentComponent /> */}
+        {/* Part 15 */}
+        {/* <RefsDemo /> */}
+        {/* Part 16 */}
+        {/* <PortalDemo /> */}
+        {/* Part 17 */}
+        {/* <ErrorBoundary>
         <Hero heroName="Batman" />
       </ErrorBoundary>
       <ErrorBoundary>
@@ -134,44 +155,46 @@ function App() {
       <ErrorBoundary>
         <Hero heroName="Joker" />
       </ErrorBoundary> */}
-      {/* Part 18 */}
-      {/* <ClickCounter name="Tudi" />
+        {/* Part 18 */}
+        {/* <ClickCounter name="Tudi" />
       <HoverCounter /> */}
-      {/* Part 19 */}
-      {/* <ClickCounterTwo />
+        {/* Part 19 */}
+        {/* <ClickCounterTwo />
       <HoverCounterTwo /> */}
-      {/* Version one */}
-      {/* <Users name={(isLoggedIn) => isLoggedIn ? "Welcome Tudor" : "Please Login"} /> */}
-      {/* Version two */}
-      {/* <Users render={(isLoggedIn) => isLoggedIn ? "Welcome Tudor" : "Please Login"} /> */}
+        {/* Version one */}
+        {/* <Users name={(isLoggedIn) => isLoggedIn ? "Welcome Tudor" : "Please Login"} /> */}
+        {/* Version two */}
+        {/* <Users render={(isLoggedIn) => isLoggedIn ? "Welcome Tudor" : "Please Login"} /> */}
 
-      {/* <CounterProps render={(count, incrementCount) => (<ClickCounterTwo count={count} incrementCount={incrementCount} />)} />
+        {/* <CounterProps render={(count, incrementCount) => (<ClickCounterTwo count={count} incrementCount={incrementCount} />)} />
       <CounterProps render={(count, incrementCount) => (<HoverCounterTwo count={count} incrementCount={incrementCount} />)} /> */}
 
-      {/* Variation of render props that doesn't use the children prop instead of the render prop. */}
+        {/* Variation of render props that doesn't use the children prop instead of the render prop. */}
 
-      {/* <CounterProps>
+        {/* <CounterProps>
         {(count, incrementCount) => (<ClickCounterTwo count={count} incrementCount={incrementCount} />)}
       </CounterProps>
       <CounterProps>
         {(count, incrementCount) => (<HoverCounterTwo count={count} incrementCount={incrementCount} />)}
       </CounterProps> */}
 
-      {/* Part 20 */}
-      {/* With custom value */}
-      {/* <UserProvider value="Tudor" >
+        {/* Part 20 */}
+        {/* With custom value */}
+        {/* <UserProvider value="Tudor" >
         <ComponentC />
       </UserProvider> */}
 
-      {/* With default value */}
-      {/* <ComponentC /> */}
+        {/* With default value */}
+        {/* <ComponentC /> */}
 
-      {/* Part 21 */}
-      {/* <PostList /> */}
+        {/* Part 21 */}
+        {/* <PostList /> */}
 
-      {/* Part 22 */}
-      <PostForm />
-    </div>
+        {/* Part 22 */}
+        <PostForm />
+      </div>
+
+    </Router>
   );
 
 }
