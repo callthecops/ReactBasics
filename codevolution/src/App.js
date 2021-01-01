@@ -33,6 +33,8 @@ import Users from './AdvancedComponents/Users';
 import CounterProps from './AdvancedComponents/CounterProps';
 import ComponentC from './contextComponents/ComponentC';
 import { UserProvider } from './contextComponents/userContext';
+import PostList from './http/PostList';
+import PostForm from './http/PostForm';
 //Check Greet.js for clarification regarding stateless component(WITH PROPS)
 //Check Welcome.js for clarification regarding statefull component(WITH PROPS)
 //Check Message.js for clarification regarding STATE(WITH STATE)
@@ -53,6 +55,8 @@ import { UserProvider } from './contextComponents/userContext';
 //Check part 18 and ClickCounter.js,withCounter.js,HoverCounter.js for higher order components.
 //Check part 19 and ClickCounterTwo.js,HoverCOunterTwo.js,CounterProps.js for rendering props.
 //Check part 20 and ComponentC.js, ComponentF.js, ComponentE.js for React Context
+//Check part 21 and http.PostList.js for HttpGet and axios.
+//Check part 22 and PostForm.js for HttpPost.
 function App() {
   return (
     <div className="App">
@@ -154,10 +158,19 @@ function App() {
       </CounterProps> */}
 
       {/* Part 20 */}
-      <UserProvider value="Tudor">
+      {/* With custom value */}
+      {/* <UserProvider value="Tudor" >
         <ComponentC />
-      </UserProvider>
+      </UserProvider> */}
 
+      {/* With default value */}
+      {/* <ComponentC /> */}
+
+      {/* Part 21 */}
+      {/* <PostList /> */}
+
+      {/* Part 22 */}
+      <PostForm />
     </div>
   );
 
